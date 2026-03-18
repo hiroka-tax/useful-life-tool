@@ -1,0 +1,178 @@
+/* ---- リセット & ベース ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Hiragino Sans", "Meiryo", sans-serif;
+  background: #f5f6fa;
+  color: #2d2d2d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- ヘッダー ---- */
+header {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 28px 24px 24px;
+  text-align: center;
+}
+header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.05em; }
+.subtitle { margin-top: 6px; font-size: 0.85rem; color: #a0c4e8; }
+
+/* ---- メインコンテンツ ---- */
+main {
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ---- 検索ボックス ---- */
+.search-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+.search-box input {
+  width: 100%;
+  padding: 14px 48px 14px 18px;
+  font-size: 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+.search-box input:focus { border-color: #2563eb; }
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* ---- サマリー ---- */
+.summary {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+.summary span { font-weight: 600; color: #1e3a5f; }
+
+/* ---- セクション ---- */
+.section { margin-bottom: 28px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.section-header h2 { font-size: 0.9rem; font-weight: 700; color: #374151; }
+.section-badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 600;
+}
+.badge-nta { background: #dbeafe; color: #1d4ed8; }
+.badge-egov { background: #d1fae5; color: #065f46; }
+
+/* ---- カード ---- */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  border-left: 4px solid transparent;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  transition: box-shadow 0.15s;
+}
+.card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.12); }
+.card-nta { border-left-color: #2563eb; }
+.card-egov { border-left-color: #059669; }
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.tag {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.card-years {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1e3a5f;
+  margin-bottom: 10px;
+}
+.card-years span { font-size: 0.85rem; font-weight: 500; color: #6b7280; }
+
+.card-refs { margin-bottom: 8px; }
+.ref-item {
+  font-size: 0.78rem;
+  color: #6b7280;
+  padding: 2px 0;
+}
+.ref-item::before { content: "📋 "; }
+
+.card-source {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-source a { color: #2563eb; }
+
+/* ---- 空・初期状態 ---- */
+.empty, .initial {
+  text-align: center;
+  padding: 60px 20px;
+  color: #9ca3af;
+}
+.empty p { margin-bottom: 8px; }
+.empty-hint { font-size: 0.85rem; }
+
+/* ---- フッター ---- */
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+/* ---- ユーティリティ ---- */
+.hidden { display: none !important; }
+
+/* ---- モバイル対応 ---- */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.3rem; }
+  .card-years { font-size: 1.2rem; }
+}

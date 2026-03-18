@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>耐用年数判定ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>耐用年数判定ツール</h1>
+    <p class="subtitle">e-Gov 法令 / 国税庁 質疑応答・通達 横断検索</p>
+  </header>
+
+  <main>
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="資産名・用途で検索（例：建物、車両、LAN、太陽光…）"
+        autocomplete="off"
+      >
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div id="summary" class="summary hidden"></div>
+
+    <div id="results"></div>
+
+    <div id="empty" class="empty hidden">
+      <p>「<span id="emptyKeyword"></span>」に一致する資産が見つかりませんでした。</p>
+      <p class="empty-hint">別のキーワードで検索してみてください。</p>
+    </div>
+
+    <div id="initial" class="initial">
+      <p>キーワードを入力すると検索します。</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      データソース：
+      <a href="https://laws.e-gov.go.jp/" target="_blank">e-Gov 法令検索</a>
+      /
+      <a href="https://www.nta.go.jp/" target="_blank">国税庁</a>
+    </p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
